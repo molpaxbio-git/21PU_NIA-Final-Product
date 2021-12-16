@@ -31,7 +31,8 @@ else
     mkdir ${project}/${name}
 fi
 echo [Log] Test started at $(date)... >> ${project}/${name}/test_log.txt
-isz=224
+printf 'image size: '
+read -r isz
 echo [Log] python test.py --img ${isz} --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --project ${project} >> ${project}/${name}/test_log.txt
 python test.py --img ${isz} --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --project ${project}
 

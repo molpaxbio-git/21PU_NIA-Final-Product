@@ -31,9 +31,12 @@ else
     mkdir ${project}/${name}
 fi
 echo [Log] Training started at $(date)... >> ${project}/${name}/training_log.txt
-isz=224
-b=64
-ep=200
+printf 'image size: '
+read -r isz
+printf 'batch size: '
+read -r b
+printf 'max epochs: '
+read -r ep
 echo [Log] python training.py --img ${isz} --batch ${b} --epochs ${ep} --device $2 --cfg ./models/sP5.yaml --weights yolov5s.pt --name ${name} --project ${project} >> ${project}/${name}/training_log.txt
 python training.py --img ${isz} --batch ${b} --epochs ${ep} --device $2 --cfg ./models/sP5.yaml --weights yolov5s.pt --name ${name} --project ${project}
 
