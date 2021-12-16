@@ -63,9 +63,9 @@ pip install --no-cache -r requirements.txt
 | max epoch  | 200   |
 ```Bash
 # cpu
-python training.py --img 224 --batch 64 --epochs 200 --device cpu --cfg ./models/sP5.yaml --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
+python training.py --img 224 --batch 64 --epochs 200 --device cpu --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
 # single gpu
-python training.py --img 224 --batch 64 --epochs 200 --device 0 --cfg ./models/sP5.yaml --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
+python training.py --img 224 --batch 64 --epochs 200 --device 0 --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
 ```
 검증 validation
 | hyp 예시   | value |
