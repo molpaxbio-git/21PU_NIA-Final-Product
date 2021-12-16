@@ -1,0 +1,24 @@
+All:
+  Number of Predictions: '4084'
+  Number of Targets: '2150'
+  mAP@.5: '0.9096215326377688'
+other differential ulcers:
+  AP@.5: '0.9308598890874125'
+  Number of Predictions: '1243'
+  Number of Targets: '643'
+pressure ulcer 1:
+  AP@.5: '0.9134417879533742'
+  Number of Predictions: '956'
+  Number of Targets: '347'
+pressure ulcer 2:
+  AP@.5: '0.8118705099008645'
+  Number of Predictions: '703'
+  Number of Targets: '318'
+pressure ulcer 3:
+  AP@.5: '0.9032805859130846'
+  Number of Predictions: '664'
+  Number of Targets: '390'
+pressure ulcer 4:
+  AP@.5: '0.9886548903341078'
+  Number of Predictions: '518'
+  Number of Targets: '452'
