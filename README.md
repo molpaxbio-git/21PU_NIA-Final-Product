@@ -8,3 +8,90 @@ GPL-3.0 license
 Author: jaesik won <jaesik.won@molpax.com>
 Created: 10/12/2021
 Version: 0.5
+
+### 사용법
+#### 1. 설치 방법
+```Bash
+git clone https://github.com/molpaxbio-git/21PU_NIA-Final-Product.git
+cd 21PU_NIA-Final-Product
+
+# 환경 변수 설정
+export AWS_ACCESS_KEY_ID=[사용할 access key id]
+export AWS_SECRET_ACCESS_KEY=[사용할 secret access key]
+export AWS_BUCKET_NAME=[사용할 bucket 이름]
+
+# 프레임워크 설치
+sudo apt-get update
+pip install --upgrade pip
+pip install --no-cache -r requirements.txt
+# optional
+# pip install --no-cache torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+# pip install --no-cache -U numpy
+```
+
+#### 2. 사용 방법 (소스 코드)
+학습 training
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+| batch size | 64    |
+| max epoch  | 200   |
+```Bash
+# cpu
+python training.py --img 224 --batch 64 --epochs 200 --device cpu --cfg ./models/sP5.yaml --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
+# single gpu
+python training.py --img 224 --batch 64 --epochs 200 --device 0 --cfg ./models/sP5.yaml --weights yolov5s.pt --name [생성할 폴더 이름] --project "./runs/train"
+```
+검증 validation
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+| batch size | 64    |
+```Bash
+# cpu
+python infer.py --img 224 --batch 64 --data ./nia_utils/data.yaml --device cpu --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
+# single gpu
+python infer.py --img 224 --batch 64 --data ./nia_utils/data.yaml --device 0 --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
+```
+테스트 test
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+```Bash
+# cpu
+python test.py --img 224 --device cpu --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --project "./runs/test"
+# single gpu
+python test.py --img 224 --device 0 --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --project "./runs/test"
+```
+
+#### 3. 사용 방법 (Bash Scripts)
+학습 training
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+| batch size | 64    |
+| max epoch  | 200   |
+```Bash
+$ ./training.sh [생성할 폴더 이름] [cpu 또는 0]
+$ image size: 224
+$ batch size: 64
+$ max epochs: 200
+```
+검증 validation
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+| batch size | 64    |
+```Bash
+$ ./infer.sh [학습 폴더 이름] [cpu 또는 0]
+$ image size: 224
+$ batch size: 64
+```
+테스트 test
+| hyp 예시   | value |
+|------------|-------|
+| image size | 224   |
+```Bash
+$ ./test.sh [학습 폴더 이름] [cpu 또는 0]
+$ image size: 224
+```
