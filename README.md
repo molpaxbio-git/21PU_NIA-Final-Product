@@ -74,9 +74,9 @@ python training.py --img 224 --batch 64 --epochs 200 --device 0 --weights yolov5
 | batch size | 64    |
 ```Bash
 # cpu
-python infer.py --img 224 --batch 64 --data ./nia_utils/data.yaml --device cpu --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
+python infer.py --img 224 --batch 64 --device cpu --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
 # single gpu
-python infer.py --img 224 --batch 64 --data ./nia_utils/data.yaml --device 0 --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
+python infer.py --img 224 --batch 64 --device 0 --weights ./runs/train/[학습 폴더 이름]/weights/best.pt --name [생성할 폴더 이름] --verbose --project "./runs/infer"
 ```
 테스트 test
 | hyp 예시   | value |
