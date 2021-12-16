@@ -5,8 +5,8 @@ Author: Ultralytics
 GPL-3.0 license
 
 ### Modified by ☘ Molpaxbio Co., Ltd.
-Author: jaesik won <jaesik.won@molpax.com>
-Created: 10/12/2021
+Author: jaesik won <jaesik.won@molpax.com>  
+Created: 10/12/2021  
 Version: 0.5
 
 ### 사용법
