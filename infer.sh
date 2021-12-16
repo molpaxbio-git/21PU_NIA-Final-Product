@@ -31,8 +31,10 @@ else
     mkdir ${project}/${name}
 fi
 echo [Log] Validation started at $(date)... >> ${project}/${name}/val_log.txt
-isz=224
-b=64
+printf 'image size: '
+read -r isz
+printf 'batch size: '
+read -r b
 echo [Log] python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --verbose --project ${project} >> ${project}/${name}/val_log.txt
 python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --verbose --project ${project}
 
