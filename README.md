@@ -32,7 +32,13 @@ Modified: 16/12/2021
         └── zip          # train from zip trainset/val from zip valset
             └── weights  
 ```
-  
+
+### 로그 구조 및 설명
+테스트 test
+```Bash
+(("%d" * 5 + "%g") % class, x1, y1, x2, y2, confidance)
+예측한 클래스, 바운딩박스 좌상단 x, y, 바운딩박스 우하단 x, y, confidance 값
+```
   
 ### 사용법
 #### 1. 설치 방법
