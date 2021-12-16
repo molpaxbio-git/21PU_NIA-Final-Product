@@ -9,6 +9,30 @@ Author: jaesik won <jaesik.won@molpax.com>
 Created: 10/12/2021  
 Version: 0.5
 
+### 파일 구조 및 설명
+```Bash
+.
+├── data      # YOLOv5 original data utils
+│   └── hyps  # hyperparameters
+├── models    # YOLOv5 original model utils
+│   └── hub   # anchor config
+├── nia_utils # utils for nia
+├── utils     # YOLOv5 original other utils
+└── runs                 # runs
+    ├── infer
+    │   ├── s3           # infer from s3 trained weight model, s3 valset
+    │   └── zip          # infer from zip trained weight model, s3 valset
+    ├── test
+    │   └── s3           # test from s3 trained weight model, s3 testset
+    │   └── zip          # test from zip trained weight model, s3 testset
+    └── train
+        ├── s3           # train from s3 trainset/val from s3 valset
+        │   └── weights  
+        └── zip          # train from zip trainset/val from zip valset
+            └── weights  
+```
+  
+  
 ### 사용법
 #### 1. 설치 방법
 ```Bash
