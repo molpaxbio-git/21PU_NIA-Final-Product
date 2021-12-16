@@ -1,0 +1,28 @@
+prefix: '066.단계별 욕창 환부 이미지 데이터/01.데이터'
+kinds:
+    train: '1.Training'
+    val: '2.Validation'
+    test: '3.Test'
+
+datas:
+    image:
+        name: '원천데이터'
+        ext: '.jpg'
+    label:
+        name: '라벨링데이터'
+        ext: '.json'
+
+nc: 5
+names: 
+    'pressure ulcer 1': 0
+    'pressure ulcer 2': 1
+    'pressure ulcer 3': 2
+    'pressure ulcer 4': 3
+    'other differential ulcers': 4
+    'normal skin': 5
+    'diabetic ulcer': 4
+    'medical device related pressure injury': 4
+    'moisture associated skin damage': 4
+    'suspected deep tissue injury': 4
+    'unclassified pressure ulcer': 4
+    'pressure exposure related skin damage': 4
