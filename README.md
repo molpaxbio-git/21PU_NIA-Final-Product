@@ -126,3 +126,17 @@ $ batch size: 64
 $ ./test.sh [학습 폴더 이름] [cpu 또는 0]
 $ image size: 224
 ```
+
+#### 4. 사용 방법 (Docker Image)
+```Bash
+$ docker container run -it --name yolo jaesikwon/yolo_bedsore:latest /bin/bash
+
+# Bash 실행까지 대기
+
+# 환경변수 설정
+root@[yolo_container_id]: export AWS_ACCESS_KEY_ID=[사용할 access key id]
+root@[yolo_container_id]: export AWS_SECRET_ACCESS_KEY=[사용할 secret access key]
+root@[yolo_container_id]: export AWS_BUCKET_NAME=[사용할 bucket 이름]
+
+# 사용법 2, 3으로 사용
+```
