@@ -35,7 +35,7 @@ printf 'image size: '
 read -r isz
 printf 'batch size: '
 read -r b
-echo [Log] python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --verbose --project ${project} >> ${project}/${name}/val_log.txt
-python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --verbose --project ${project}
+echo [Log] python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${1}/weights/best.pt --name ${name} --verbose --project ${project} >> ${project}/${name}/val_log.txt
+python infer.py --img ${isz} --batch ${b} --data ./nia_utils/data.yaml --device ${device} --weights ./runs/train/${1}/weights/best.pt --name ${name} --verbose --project ${project}
 
 echo [Log] Validation ended at $(date)... >> ${project}/${name}/val_log.txt
