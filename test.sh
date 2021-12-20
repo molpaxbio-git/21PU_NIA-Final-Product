@@ -33,7 +33,7 @@ fi
 echo [Log] Test started at $(date)... >> ${project}/${name}/test_log.txt
 printf 'image size: '
 read -r isz
-echo [Log] python test.py --img ${isz} --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --project ${project} >> ${project}/${name}/test_log.txt
-python test.py --img ${isz} --device ${device} --weights ./runs/train/${name}/weights/best.pt --name ${name} --project ${project}
+echo [Log] python test.py --img ${isz} --device ${device} --weights ./runs/train/${1}/weights/best.pt --name ${name} --project ${project} >> ${project}/${name}/test_log.txt
+python test.py --img ${isz} --device ${device} --weights ./runs/train/${1}/weights/best.pt --name ${name} --project ${project}
 
 echo [Log] Test ended at $(date)... >> ${project}/${name}/test_log.txt
