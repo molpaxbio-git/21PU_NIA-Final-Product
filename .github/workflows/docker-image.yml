@@ -27,4 +27,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: jaesikwon/yolo_bedsore:${{ github.head_ref }}
+        tags: jaesikwon/yolo_bedsore:latest
