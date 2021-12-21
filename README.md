@@ -129,9 +129,19 @@ $ image size: 224
 
 #### 4. 사용 방법 (Docker Image)
 ```Bash
-$ docker container run -it --name yolo jaesikwon/yolo_bedsore:latest /bin/bash
+# tar.gz를 docker image로 전환
+$ docker load -i YOLO_bedsore.tar.gz
+Loaded image: yolo_bedsore:latest
 
-# Bash 실행까지 대기
+# image 확인
+$ docker images -a
+REPOSITORY                                 TAG         IMAGE ID       CREATED         SIZE
+yolo_bedsore                               latest                                     17.7GB
+
+# image 실행
+$ docker container run -it --name yolo yolo_bedsore:latest /bin/bash
+
+... # Bash 실행까지 대기
 
 # 환경변수 설정
 root@[yolo_container_id]: export AWS_ACCESS_KEY_ID=[사용할 access key id]
