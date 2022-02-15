@@ -57,7 +57,8 @@ def ap_per_class(stats, save_dir='.', names=(), logger: Logger=None):
     i = np.argsort(-confidance)
     length = i.shape[0]
     data_id, ground_truth, prediction, confidance, true_positive = data_id[i], ground_truth[i], prediction[i], confidance[i], true_positive[i]
-
+    true_positive = np.where(confidance < 0.5, False, true_positive)
+    
     unique_classes = np.unique(ground_truth)
     nc = unique_classes.shape[0]
 
